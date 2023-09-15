@@ -54,7 +54,8 @@ app.get('/', (req, res) => {
 
 app.post('/upload', upload.single("pdf",) , async function (req, res) {
     
-    await pdfToImg(fileName).then(()=>{res.sendFile('C:/Users/priya/playground/pdftoimg/zip/'+fileName.slice(0, -4)+'.zip')})
+    await pdfToImg(fileName).then
+    (res.send({msg:"done check the zip folder of this app"}))
 })
 
 app.listen(port, () => {
